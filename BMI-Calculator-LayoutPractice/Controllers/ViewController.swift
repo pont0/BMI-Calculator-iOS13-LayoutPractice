@@ -14,7 +14,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    @IBOutlet weak var heightLabel: UILabel!
+    
+    @IBAction func heightSlider(_ sender: UISlider) {
+        
+        heightLabel.text = String(format: "%.2f", sender.value)
+        
+        
+    }
+    @IBOutlet weak var weightLabel: UILabel!
 
-
+    @IBAction func weightSlider(_ sender: UISlider) {
+        weightLabel.text = String(Int(sender.value))
+    }
+    
+    
+    
 }
 
