@@ -18,15 +18,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var heightLabel: UILabel!
     
     @IBAction func heightSlider(_ sender: UISlider) {
-        
-        heightLabel.text = String(format: "%.2f", sender.value)
+        let height = String(format: "%.2f", sender.value)
+        heightLabel.text = "\(height)m"
         
         
     }
     @IBOutlet weak var weightLabel: UILabel!
 
     @IBAction func weightSlider(_ sender: UISlider) {
-        weightLabel.text = String(Int(sender.value))
+        let weight = String(Int(sender.value))
+        weightLabel.text = "\(weight)kg"
     }
     
     
