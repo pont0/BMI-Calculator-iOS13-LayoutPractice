@@ -20,7 +20,7 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var heightOutlet: UISlider!
     @IBOutlet weak var weightOutlet: UISlider!
     
-    var cb = CalculatorBrain(height: 0.0, weight: 0.0, bmiValue: 0.0)
+    var cb = CalculatorBrain(height: 0.0, weight: 0.0)
     
     
     @IBAction func heightSlider(_ sender: UISlider) {
@@ -50,8 +50,9 @@ class CalculateViewController: UIViewController {
             if (segue.identifier == "goToResult") {
                 let destinationVC = segue.destination as! ResultViewController
                 destinationVC.bmiValue = cb.getBMIValue()
-                //String(format: "%.1f",cb.bmiValue)
-               
+                destinationVC.adviceText = cb.getAdvice()
+                destinationVC.bgColor = cb.getbgColor()
+                
                 
             }
         }
